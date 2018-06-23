@@ -29,8 +29,8 @@ Quantstamp's security engineers performed an independent manual review of the so
 Detailed findings
 
 * The “pragma solidity” statement is set to ^0.4.20.
-1) We recommend setting it to the most recent Solidity version.
-2) We recommend not using the caret symbol, but, instead, specify a set Solidity version.
+..1. We recommend setting it to the most recent Solidity version.
+..2. We recommend not using the caret symbol, but, instead, specify a set Solidity version.
 
 * We recommend refactoring the code to follow the new syntax (e.g., use constructor() for constructor names)
 
