@@ -9,7 +9,7 @@ Quantstamp's security engineers performed an independent manual review of the so
 The contract features the "standard" ERC20 race condition vulnerability between approve/transferFrom (which is a flaw in ERC20 design). While not an immediate vulnerability, it could be mitigated by implementing and recommending users to call increase/decreaseApproval() functions. For more information, see https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729.
 
 ## Centralization of power
-While not a vulnerability, if owner's private key is compromised, then the following issues may arise:
+While not a vulnerability, if the contract owner's private key is compromised, then the following issues may arise:
 
 * The contract owner can perform unlimited minting, and, consequently, arbitrarily increase the supply.  It is unclear to us whether the token is intended to have a fixed supply or capped.
 * The owner can also freeze and unfreeze transfers at will.
@@ -29,8 +29,8 @@ Quantstamp's security engineers performed an independent manual review of the so
 Detailed findings
 
 * The “pragma solidity” statement is set to ^0.4.20.
-.. We recommend setting it to the most recent Solidity version.
-.. We recommend not using the caret symbol, but, instead, specify a set Solidity version.
+** We recommend setting it to the most recent Solidity version.
+** We recommend not using the caret symbol, but, instead, specify a set Solidity version.
 * We recommend refactoring the code to follow the new syntax (e.g., use constructor() for constructor names)
 * We recommend using well-tested OpenZeppelin contracts instead of having custom code for the token.
 * We recommend using OpenZeppelin's SafeMath, Ownable and Burnable contracts.
