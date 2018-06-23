@@ -28,22 +28,13 @@ Quantstamp's security engineers performed an independent manual review of the so
 
 Detailed findings
 
-* The “pragma solidity” statement is set to ^0.4.20.
-..1. We recommend setting it to the most recent Solidity version.
-..2. We recommend not using the caret symbol, but, instead, specify a set Solidity version.
-
+* The “pragma solidity” statement is set to ^0.4.20. We recommend: (1) setting it to the most recent Solidity version; (2) not using the caret symbol, but, instead, specify a set Solidity version.
 * We recommend refactoring the code to follow the new syntax (e.g., use constructor() for constructor names)
-
 * We recommend using well-tested OpenZeppelin contracts instead of having custom code for the token.
-
 * We recommend using OpenZeppelin's SafeMath, Ownable and Burnable contracts.
-
 * Conceptually, it is irregular to state that AbstractToken is SafeMath. We recommend to avoid using inheritance and follow the pattern of using OpenZeppelin's SafeMath contract.
-
 * There are if/else statements for argument validation. This includes validation of balances and global freeze state. We recommend using require() for this purpose, as well as introducing a function modifier for “frozen” status.
-
 * The function decimals() returns 4. We recommend verifying that this is the correct number of decimals.
-
 * Morpheus.Network should use unit tests.The contract lacks tests. Given the importance of the contract and the previous security breach, we recommend writing a comprehensive test suite.
 
 
